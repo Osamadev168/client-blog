@@ -1,5 +1,5 @@
 import js from "../assets/js.jpg";
-
+import Grid from "";
 const Details = () => {
   return <h1 style={{ marginTop: 100 }}>Post Details</h1>;
 };
