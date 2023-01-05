@@ -31,7 +31,7 @@ export default function BasicGrid() {
     <Box sx={{ flexGrow: 1 }}>
       <h1>Catagories</h1>
 
-      <Grid container spacing={3}>
+      <Grid container spacing={2}>
         <Grid item xs={4}>
           <Item style={{ backgroundImage: `url(${News})` }}>
             <h1 onMouseOver={HoverEnter} onMouseLeave={HoverLeave}>
