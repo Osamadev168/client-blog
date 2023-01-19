@@ -1,15 +1,18 @@
-import AppBar from "../components/Appbar.jsx";
-import Catagories from "../components/Catagories.jsx";
-import Featured from "../components/Featured.jsx";
 import Footer from "../components/Footer.jsx";
-import Carousel from "../components/Carouel.jsx";
+
+import { lazy } from "react";
+const Latest = lazy(() => import("./LatestPosts.jsx"));
+const Carousel = lazy(() => import("./Carouel.jsx"));
+const Catagories = lazy(() => import("./Catagories.jsx"));
+const Popular = lazy(() => import("./Popular.jsx"));
+
 const Home = () => {
   return (
     <>
-      <AppBar />
       <Carousel />
       <Catagories />
-      <Featured />
+      <Latest />
+      <Popular />
       <Footer />
     </>
   );

@@ -1,4 +1,4 @@
-import { Box, Grid } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 
 const Footer = () => {
   return (
@@ -13,9 +13,7 @@ const Footer = () => {
           justifyContent: "center",
         }}
       >
-        <h1>Copyright neon inc</h1>
-        <h1>Copyright neon inc</h1>
-        <h1>Copyright neon inc</h1>
+        <Typography fontSize={30}>Copyright &copy; 2023 Neon Blogs</Typography>
       </Grid>
     </Box>
   );

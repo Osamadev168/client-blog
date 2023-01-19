@@ -3,9 +3,10 @@ import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import News from "../assets/News.jpg";
-import { Card } from "@mui/material";
+import { Card, Divider, Typography } from "@mui/material";
 import Sports from "../assets/Sports.jpg";
 import Blog from "../assets/blogpic.jpg";
+import { Link } from "react-router-dom";
 const Item = styled(Card)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
   ...theme.typography.body2,
@@ -28,29 +29,44 @@ export default function BasicGrid() {
     event.target.style.color = "white";
   };
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <h1>Catagories</h1>
-
-      <Grid container spacing={2}>
-        <Grid item xs={4}>
+    <Box sx={{ flexGrow: 1 }} margin={2}>
+      <Typography fontSize={30}>Categories</Typography>
+      <Divider />
+      <Grid spacing={2}>
+        <Grid xs={12} lg={3} sm={3}>
           <Item style={{ backgroundImage: `url(${News})` }}>
-            <h1 onMouseOver={HoverEnter} onMouseLeave={HoverLeave}>
-              News
-            </h1>
+            <Link
+              to="posts/Sports"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              <Typography onMouseOver={HoverEnter} onMouseLeave={HoverLeave}>
+                Sports
+              </Typography>
+            </Link>
           </Item>
         </Grid>
-        <Grid item xs={4}>
+        <Grid xs={12} lg={4} sm={6}>
           <Item style={{ backgroundImage: `url(${Sports})` }}>
-            <h1 onMouseOver={HoverEnter} onMouseLeave={HoverLeave}>
-              Sports
-            </h1>
+            <Link
+              to="posts/Science"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              <Typography onMouseOver={HoverEnter} onMouseLeave={HoverLeave}>
+                Science
+              </Typography>
+            </Link>
           </Item>
         </Grid>
-        <Grid item xs={4}>
+        <Grid xs={12} lg={4} sm={6}>
           <Item style={{ backgroundImage: `url(${Blog})` }}>
-            <h1 onMouseOver={HoverEnter} onMouseLeave={HoverLeave}>
-              Blog
-            </h1>
+            <Link
+              to="posts/Tech"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              <Typography onMouseOver={HoverEnter} onMouseLeave={HoverLeave}>
+                Technology
+              </Typography>
+            </Link>
           </Item>
         </Grid>
       </Grid>
