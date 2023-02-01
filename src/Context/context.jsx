@@ -5,6 +5,7 @@ export const DataContext = createContext(null);
 const DataProvider = ({ children }) => {
   const [user, setUser] = useState({});
   const [posts, setPosts] = useState([]);
+  const [token, setToken] = useState("");
   const auth = getAuth(app);
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {

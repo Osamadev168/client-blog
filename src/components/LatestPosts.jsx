@@ -19,7 +19,7 @@ export default function LatestPosts() {
   const fetchPosts = async () => {
     try {
       await axios
-        .get("https://server-blog-production.up.railway.app/posts")
+        .get("https://august-snowfall-375315.el.r.appspot.com//posts")
         .then((res) => {
           setPost(res.data);
           setPosts(res.data);

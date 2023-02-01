@@ -14,17 +14,15 @@ import { Button, Container } from "@mui/material";
 import { DataContext } from "../Context/context.jsx";
 import { Navigate, useNavigate } from "react-router-dom";
 const GoogleLogin = () => {
-  const [token, setToken] = useState("");
-  // const [user, setUser] = useState(false);
   const { user, setUser } = useContext(DataContext);
   const navigate = useNavigate();
   const singOutUser = () => {
     try {
       const auth = getAuth(app);
-      signOut(auth).then(() => {});
+      signOut(auth);
       navigate("/");
     } catch (e) {
-      alert(e);
+      console.log(e);
     }
   };
 
@@ -34,16 +32,8 @@ const GoogleLogin = () => {
     provider.setCustomParameters({
       prompt: "select_account",
     });
-    signInWithPopup(auth, provider)
-      .then((result) => {
-        const credential = GoogleAuthProvider.credentialFromResult(result);
-        const tokenuser = credential.idToken;
-        setToken(tokenuser);
-        navigate("/");
-      })
-      .catch((error) => {
-        alert(error);
-      });
+    signInWithPopup(auth, provider);
+    navigate("/");
   };
 
   return (

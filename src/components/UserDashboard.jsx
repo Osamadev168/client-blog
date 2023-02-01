@@ -41,7 +41,7 @@ const UserDashboard = () => {
       <Typography fontSize={40}>
         Welcome, {user ? user.displayName : ""}
       </Typography>
-      {post.length > 0 ? (
+      {post && post.length > 0 ? (
         post.map((posts, index) => {
           const addEllipsis = (str, limit) => {
             return str.length > limit ? str.substring(0, limit) + "...." : str;
